@@ -67,7 +67,17 @@ resource "aws_route_table" "public-rt" {
   }
 }
 
+resource "aws_route_table_association" "pub-rt-1a-associate" {
+  subnet_id      = aws_subnet.vorx-subnet-pub-1a.id
+  route_table_id = aws_route_table.public-rt.id
+}
+
  
+
+resource "aws_route_table_association" "pub-rt-1b-associate" {
+  subnet_id      = aws_subnet.vorx-subnet-pub-1b.id
+  route_table_id = aws_route_table.public-rt.id
+} 
 
 
 ## OUTPUTS DO NOSSO TF ##
